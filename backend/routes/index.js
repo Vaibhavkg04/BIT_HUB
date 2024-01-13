@@ -6,7 +6,7 @@ const app = express();
 const cors = require("cors");
 const multer = require("multer");
 const path = require("path");
-const port = process.env.PORT || 3000;
+const port = process.env.port || 6000;
 app.set("view engine", "ejs");
 let url =
 	"mongodb+srv://vaibhavkumargupta2004:mrfD73qXcn685Bsi@megacluster.upvlkjb.mongodb.net/?retryWrites=true&w=majority";
