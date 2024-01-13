@@ -12,7 +12,7 @@ function Login() {
 	const [password, setPass] = useState("");
 
 	const handleLogin = () => {
-		const url = "http://localhost:3000/login";
+		const url = "https://bit-c-hub.onrender.com/login";
 		const data = { username, password };
 		alert(username);
 		localStorage.setItem("Pname", username);

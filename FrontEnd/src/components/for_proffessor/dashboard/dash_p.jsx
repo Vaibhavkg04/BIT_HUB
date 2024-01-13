@@ -6,7 +6,7 @@ function Dash_p() {
 	const pname = localStorage.getItem("Pname");
 	useEffect(() => {
 		axios
-			.get("http://localhost:3000/getImage", {
+			.get("https://bit-c-hub.onrender.com/getImage", {
 				params: { pname },
 			})
 			.then((res) => setImage_dash(res.data.image))
@@ -113,7 +113,7 @@ function Dash_p() {
 						<div className="picture">
 							<img
 								className="ml-8 mt-2 h-24 w-28"
-								src={"http://localhost:3000/images/" + img_dash}
+								src={"https://bit-c-hub.onrender.com/images/" + img_dash}
 								alt=""
 							/>
 							<br />

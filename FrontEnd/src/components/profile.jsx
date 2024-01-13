@@ -24,7 +24,7 @@ function Profile() {
 		formdata.append("file", file);
 
 		axios
-			.post("http://localhost:3000/upload", formdata, {
+			.post("https://bit-c-hub.onrender.com/upload", formdata, {
 				params: { pname }, // send pname as a query parameter or in the body
 			})
 			.then((res) => setImage(res.data.image))
@@ -32,7 +32,7 @@ function Profile() {
 	};
 	useEffect(() => {
 		axios
-			.get("http://localhost:3000/getImage", {
+			.get("https://bit-c-hub.onrender.com/getImage", {
 				params: { pname },
 			})
 			.then((res) => setImage(res.data.image))
@@ -94,7 +94,7 @@ function Profile() {
 					</div>
 					<img
 						className="ml-16 mt-8 mb-4 h-24 w-28"
-						src={"http://localhost:3000/images/" + imgMain}
+						src={"https://bit-c-hub.onrender.com/images/" + imgMain}
 						alt=""
 						width="100"
 						height="100"

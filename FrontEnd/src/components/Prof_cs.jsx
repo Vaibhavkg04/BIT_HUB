@@ -27,7 +27,7 @@ function Pro_cs() {
 
 	const getData = async () => {
 		try {
-			const response = await axios.get("http://localhost:3000/cs");
+			const response = await axios.get("https://bit-c-hub.onrender.com/cs");
 			// alert(response.data.id2);
 
 			const combinedData = response.data.chatMessages.map(
@@ -59,7 +59,7 @@ function Pro_cs() {
 			return;
 		}
 
-		const url = "http://localhost:3000/create1"; // Corrected endpoint URL
+		const url = "https://bit-c-hub.onrender.com/create1"; // Corrected endpoint URL
 		const data = { Chat, MainUser, id1 };
 		axios
 			.post(url, data)
