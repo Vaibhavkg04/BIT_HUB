@@ -20,6 +20,7 @@ const userSchema = mongoose.Schema({
 const User = mongoose.model("User", userSchema);
 router.use(bodyParser.json());
 router.use(cors());
+app.use(express.json());
 router.use(bodyParser.urlencoded({ extended: false }));
 
 router.get("/", function (req, res, next) {
@@ -207,26 +208,29 @@ const Cs = mongoose.model("Cs", Prof_branch);
 
 router.post("/create1", async function (req, res) {
 	console.log("entered");
-	const MainUser = req.body.MainUser;
-	const chat = req.body.Chat;
-	const id1 = req.body.id1;
-	console.log(req.body.MainU);
-	const chatCreated = await Cs.create({
-		MainUser: MainUser,
-		chat: chat,
-		id1: id1,
-	});
-	console.log("padh lii");
-	chatCreated
-		.save()
-		.then(() => {
-			console.log("Posted");
-		})
-		.catch((err) => {
-			console.error(err);
-			res.status(500).send({ message: "Server error occurred" });
+
+	const { MainUser, Chat, id1 } = req.body; // Destructure request body
+
+	try {
+		const chatCreated = await Cs.create({
+			MainUser,
+			chat: Chat,
+			id1,
 		});
+
+		console.log("padh lii");
+		console.log("Posted");
+		res
+			.status(200)
+			.send({ message: "Chat record created successfully", data: chatCreated });
+	} catch (err) {
+		console.error(err);
+		res
+			.status(500)
+			.send({ message: "Failed to create chat record", error: err.message });
+	}
 });
+
 //storing userNAme
 
 //display
