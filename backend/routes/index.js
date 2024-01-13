@@ -2,9 +2,12 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 var router = express.Router();
+const app = express();
 const cors = require("cors");
 const multer = require("multer");
 const path = require("path");
+const port = process.env.PORT || 3000;
+app.set("view engine", "ejs");
 let url =
 	"mongodb+srv://vaibhavkumargupta2004:mrfD73qXcn685Bsi@megacluster.upvlkjb.mongodb.net/?retryWrites=true&w=majority";
 mongoose.connect(url);
@@ -458,6 +461,11 @@ router.get("/findAll", async function (req, res) {
 	let userAll = await hostelDB.find();
 
 	res.send(userAll);
+});
+app.use(router);
+
+app.listen(port, () => {
+	console.log(`Server running on port ${port}`);
 });
 
 module.exports = router;
