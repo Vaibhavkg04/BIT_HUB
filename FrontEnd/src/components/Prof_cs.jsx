@@ -54,8 +54,6 @@ function Pro_cs() {
 	}, []);
 	const SendChat = () => {
 		if (Chat === "") {
-			alert("cant send empty message");
-			getData();
 			return;
 		}
 

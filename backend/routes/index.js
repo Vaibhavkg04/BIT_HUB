@@ -206,6 +206,7 @@ const Cs = mongoose.model("Cs", Prof_branch);
 //Creating CS prof DAtabase
 
 router.post("/create1", async function (req, res) {
+	console.log("entered");
 	const MainUser = req.body.MainUser;
 	const chat = req.body.Chat;
 	const id1 = req.body.id1;
@@ -215,10 +216,11 @@ router.post("/create1", async function (req, res) {
 		chat: chat,
 		id1: id1,
 	});
+	console.log("padh lii");
 	chatCreated
 		.save()
 		.then(() => {
-			res.send({ message: "Posted" });
+			console.log("Posted");
 		})
 		.catch((err) => {
 			console.error(err);
