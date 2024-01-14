@@ -3,8 +3,10 @@ import axios from "axios";
 import "./alumini.css";
 import Card from "../../card";
 import Card2 from "../../card2";
+import { useNavigate } from "react-router-dom";
 let id1;
 function Alumini() {
+	const navigate = useNavigate();
 	const loggedInUsername = localStorage.getItem("userMain");
 	const [data, setData] = useState([]);
 	const [Chat, setChat] = useState("");
@@ -41,7 +43,7 @@ function Alumini() {
 	const SendChat = () => {
 		if (Chat === "") {
 			alert("cant send empty message");
-			getData();
+
 			return;
 		}
 		const url = "https://bit-c-hub.onrender.com/senior";
@@ -57,10 +59,14 @@ function Alumini() {
 				console.error(err);
 				alert("Server error occurred");
 			});
+		navigate("/Seniors/alumini");
 	};
 	useEffect(() => {
 		getData();
 	}, []);
+	function Sen() {
+		navigate("/Seniors");
+	}
 	return (
 		<div>
 			<div className="text-center font-bold text-2xl">
@@ -68,6 +74,21 @@ function Alumini() {
 			</div>
 			<div className="container  ">
 				<div>
+					<div className="side_cs p-3 ml-4  xs:block">
+						<div className="font-bold">!!!!</div>
+						<div>
+							This is a formal platform to share thoughts, ideas ,Doubts of
+							respective depart. <br />
+							Try to maintain the decoram
+							<br />
+							<button
+								onClick={Sen}
+								className="text-xl bg-blue-600 mt-3 hover:bg-blue-900 text-white  py-2 px-3  rounded border-2 border-white"
+							>
+								Go Back
+							</button>
+						</div>
+					</div>
 					{data &&
 						data.map((item, index) =>
 							item.id_net === "junior" ? (
@@ -100,7 +121,7 @@ function Alumini() {
 						</button>
 					</form>
 				</footer>
-				<div className="mb-10">hi</div>
+				<div className="mb-10"></div>
 			</div>
 		</div>
 	);

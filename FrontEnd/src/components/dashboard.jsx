@@ -115,7 +115,10 @@ function Dashboard() {
 								</div>
 							</div>
 							<div className="dono mt-2">
-								<div className="imp cursor-pointer cursor-pointer ml-20 text-lg font-bold">
+								<div
+									onClick={Profu}
+									className="imp cursor-pointer cursor-pointer ml-20 text-lg font-bold"
+								>
 									Anything to ask to Your Professors ?
 								</div>
 								<div

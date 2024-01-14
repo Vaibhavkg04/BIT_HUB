@@ -52,6 +52,9 @@ function Senior() {
 			navigate("./alumini");
 		}
 	}
+	function Home() {
+		navigate("/Dash");
+	}
 	return (
 		<div className="total">
 			<div className="text-3xl mb-8 mt-4 font-bold text-sky-600 ">
@@ -104,6 +107,13 @@ function Senior() {
 							Respond To Jrs
 						</button>
 					)}
+					<br />
+					<button
+						onClick={Home}
+						className="text-xl bg-blue-500 mt-3 hover:bg-blue-900 text-white  py-2 px-3  rounded border-2 border-white"
+					>
+						Go Back
+					</button>
 
 					{/* {(savedUserRoll === "K22" ||
 						savedUserRoll === "K21" ||

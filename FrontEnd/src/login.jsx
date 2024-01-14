@@ -14,7 +14,7 @@ function Login() {
 	const handleLogin = () => {
 		const url = "https://bit-c-hub.onrender.com/login";
 		const data = { username, password };
-		alert(username);
+
 		localStorage.setItem("Pname", username);
 
 		axios

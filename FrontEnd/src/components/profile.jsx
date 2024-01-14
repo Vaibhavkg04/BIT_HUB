@@ -85,6 +85,14 @@ function Profile() {
 
 	return (
 		<div>
+			{/* <link
+				rel="stylesheet"
+				href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+			/>
+			<link
+				rel="stylesheet"
+				href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap"
+			/> */}
 			<Nav2 />
 			<div className="sidenav mt-4 hidden md:block">
 				<div className="profile">
@@ -170,6 +178,7 @@ function Profile() {
 												onChange={(e) => setuserRoll(e.target.value)}
 												required
 											>
+												<option value="None">Select</option>
 												<option value="K23">K23</option>
 												<option value="K22">K22</option>
 												<option value="K21">K21</option>
@@ -189,6 +198,7 @@ function Profile() {
 												placeholder="Branch"
 												required
 											>
+												<option value="None">Select</option>
 												<option value="CS">CS</option>
 												<option value="ECE">ECE</option>
 												<option value="EE">EE</option>
@@ -206,10 +216,9 @@ function Profile() {
 												onChange={(e) => setuserSkill(e.target.value)}
 												required
 											>
+												<option value="None">Select</option>
+
 												<option value="1">1</option>
-												<option value="2">2</option>
-												<option value="3">3</option>
-												<option value="4">4</option>
 
 												<option value="an">DayScholar</option>
 											</select>
@@ -224,11 +233,9 @@ function Profile() {
 							>
 								save
 							</button>
-							{/* */}
 						</div>
 					</form>
 				</div>
-
 				<h2>SOCIAL MEDIA</h2>
 				<div className="card">
 					<div className="card-body">

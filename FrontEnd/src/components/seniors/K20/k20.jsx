@@ -3,8 +3,10 @@ import axios from "axios";
 import "./K20.css";
 import Card from "../../card";
 import Card2 from "../../card2";
+import { useNavigate } from "react-router-dom";
 let id1;
 function K20() {
+	const navigate = useNavigate();
 	const loggedInUsername = localStorage.getItem("userMain");
 	const [data, setData] = useState([]);
 	const [Chat, setChat] = useState("");
@@ -34,14 +36,15 @@ function K20() {
 		}
 	};
 	useEffect(() => {
-		const intervalId = setInterval(() => {
-			getData();
-		}, 1000);
-	});
+		getData();
+	}, []);
+	function Sen() {
+		navigate("/Seniors");
+	}
 	const SendChat = () => {
 		if (Chat === "") {
 			alert("cant send empty message");
-			getData();
+
 			return;
 		}
 		const url = "https://bit-c-hub.onrender.com/seniorK20";
@@ -57,12 +60,27 @@ function K20() {
 				console.error(err);
 				alert("Server error occurred");
 			});
-		getData();
+		navigate("/Seniors/K20");
 	};
 	return (
 		<div>
 			<div className="container  ">
 				<div>
+					<div className="side_cs p-3 ml-4 md:block">
+						<div className="font-bold">!!!!</div>
+						<div>
+							This is a formal platform to share thoughts, ideas ,Doubts of
+							respective depart. <br />
+							Try to maintain the decoram
+							<br />
+							<button
+								onClick={Sen}
+								className="text-xl bg-blue-600 mt-3 hover:bg-blue-900 text-white  py-2 px-3  rounded border-2 border-white"
+							>
+								Go Back
+							</button>
+						</div>
+					</div>
 					{data &&
 						data.map((item, index) =>
 							item.id_net === "junior" ? (
@@ -95,7 +113,7 @@ function K20() {
 						</button>
 					</form>
 				</footer>
-				<div className="mb-10">hi</div>
+				<div className="mb-10"></div>
 			</div>
 		</div>
 	);

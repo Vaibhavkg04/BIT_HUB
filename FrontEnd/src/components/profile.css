@@ -86,6 +86,8 @@ input {
 	position: absolute;
 	top: 70px;
 	width: 250px;
+	border-radius: 18px;
+	box-shadow: 1px 1px 2px 0 grey;
 }
 
 .profile {

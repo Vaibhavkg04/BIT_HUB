@@ -3,8 +3,10 @@ import axios from "axios";
 import Card from "./card";
 import "./Prof_cs.css";
 import Card2 from "./card2";
+import { useNavigate } from "react-router-dom";
 let id1;
 function Pro_cs() {
+	const navigate = useNavigate();
 	function toBottom() {
 		document.documentElement.scrollTop = document.documentElement.scrollHeight;
 		// Or use document.body if the above doesn't work
@@ -42,13 +44,9 @@ function Pro_cs() {
 		} catch (error) {
 			console.error("Error fetching data:", error);
 		}
+		navigate("/pro_cs");
 	};
-	// useEffect(() => {
-	// 	// Set up the interval
-	// 	const intervalId = setInterval(() => {
-	// 		getData(); // Call your function
-	// 	}, 1000);
-	// });
+
 	useEffect(() => {
 		getData();
 	}, []);
@@ -57,23 +55,23 @@ function Pro_cs() {
 			return;
 		}
 
-		const url = "https://bit-c-hub.onrender.com/create1"; // Corrected endpoint URL
+		const url = "https://bit-c-hub.onrender.com/create1";
 		const data = { Chat, MainUser, id1 };
 		axios
 			.post(url, data)
 			.then((res) => {
-				// console.log(res.data);
 				if (res.data.message) {
-					// alert(res.data.message);
 					setChat("");
 				}
 			})
 			.catch((err) => {
-				console.error(err); // Log the error for debugging
+				console.error(err);
 				alert("Server error occurred");
 			});
-		// getData();
 	};
+	function Sen() {
+		navigate("/Profu");
+	}
 	return (
 		<div>
 			<div className="side_cs p-3 ml-4 hidden md:block">
@@ -82,6 +80,13 @@ function Pro_cs() {
 					This is a formal platform to share thoughts, ideas ,Doubts of
 					respective depart. <br />
 					Try to maintain the decoram
+					<br />
+					<button
+						onClick={Sen}
+						className="text-xl bg-blue-600 mt-3 hover:bg-blue-900 text-white  py-2 px-3  rounded border-2 border-white"
+					>
+						Go Back
+					</button>
 				</div>
 			</div>
 			<div className="container  ">
@@ -89,6 +94,7 @@ function Pro_cs() {
 					<div className="text-center mb-8 text-2xl font-bold ">
 						Room For interacting with CS's Proff.{" "}
 					</div>
+
 					{data &&
 						data.map((item, index) =>
 							item.id_net === "student" ? (

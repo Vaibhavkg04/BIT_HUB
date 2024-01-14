@@ -9,6 +9,9 @@ function Professor() {
 	function teleport() {
 		navigate("/pro_cs");
 	}
+	function Home() {
+		navigate("/Dash");
+	}
 	return (
 		<div className="All">
 			<AlertDismissibleExample />
@@ -25,11 +28,19 @@ function Professor() {
 					<button className="text-xl bg-blue-600 mr-4 hover:bg-blue-900 text-white font-bold py-4 px-8  rounded border-2 border-white">
 						ECE
 					</button>
-					<button className="text-xl bg-green-600 mr-4 hover:bg-blue-900 text-white font-bold py-4 px-8  rounded border-2 border-white">
+					<button className="text-xl bg-blue-600 mr-4 hover:bg-blue-900 text-white font-bold py-4 px-8  rounded border-2 border-white">
 						EEE
 					</button>
 					<button className="text-xl bg-blue-600  mr-4 hover:bg-blue-900 text-white font-bold py-4 px-8  rounded border-2 border-white">
 						Mech
+					</button>
+					<br />
+					<br />
+					<button
+						onClick={Home}
+						className="text-xl bg-blue-600  mr-4 hover:bg-blue-900 text-white font-bold py-2 px-4  rounded border-2 border-white"
+					>
+						Go back
 					</button>
 				</div>
 				<img className="learn" src={Img} alt="" />
