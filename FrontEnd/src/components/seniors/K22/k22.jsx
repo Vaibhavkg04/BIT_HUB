@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./K22.css";
+import "./k22.css";
 import Card from "../../card";
 import Card2 from "../../card2";
 import { useNavigate } from "react-router-dom";
