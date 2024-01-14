@@ -29,7 +29,7 @@ function Pro_cs() {
 
 	const getData = async () => {
 		try {
-			const response = await axios.get("http://localhost:3000/cs");
+			const response = await axios.get("http://localhost:6000/cs");
 			// alert(response.data.id2);
 
 			const combinedData = response.data.chatMessages.map(
@@ -55,7 +55,7 @@ function Pro_cs() {
 			return;
 		}
 
-		const url = "http://localhost:3000/create1";
+		const url = "http://localhost:6000/create1";
 		const data = { Chat, MainUser, id1 };
 		axios
 			.post(url, data)

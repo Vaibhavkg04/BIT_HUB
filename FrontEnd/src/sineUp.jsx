@@ -10,7 +10,7 @@ function SinUp() {
 	const [password, setPass] = useState("");
 
 	const handleSignUp = () => {
-		const url = "http://localhost:3000/signup"; // Corrected endpoint URL
+		const url = "http://localhost:6000/signup"; // Corrected endpoint URL
 		const data = { username, password };
 
 		axios

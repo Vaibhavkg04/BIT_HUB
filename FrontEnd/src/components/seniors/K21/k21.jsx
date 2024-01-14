@@ -22,7 +22,7 @@ function K21() {
 	}
 	const getData = async () => {
 		try {
-			const response = await axios.get("http://localhost:3000/alK21");
+			const response = await axios.get("http://localhost:6000/alK21");
 			const combinedData = response.data.chatMessages.map(
 				(chatMessage, index) => ({
 					chatMessage,
@@ -48,7 +48,7 @@ function K21() {
 			getData();
 			return;
 		}
-		const url = "http://localhost:3000/seniorK21";
+		const url = "http://localhost:6000/seniorK21";
 		const data = { Chat, MainUser, id1 };
 		axios
 			.post(url, data)

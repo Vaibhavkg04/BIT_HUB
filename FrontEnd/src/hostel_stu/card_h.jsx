@@ -8,7 +8,7 @@ function Card_h({ chatMessage, user, image }) {
 			{image && (
 				<img
 					className="mt-0 mb-6 rounded-none Hostel_image"
-					src={"http://localhost:3000/images2/" + image}
+					src={"http://localhost:6000/images2/" + image}
 					alt=""
 				/>
 			)}

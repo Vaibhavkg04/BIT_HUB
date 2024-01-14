@@ -12,7 +12,7 @@ function Hostel() {
 
 	const fetchData = async () => {
 		try {
-			const response = await axios.get("http://localhost:3000/getImage_h");
+			const response = await axios.get("http://localhost:6000/getImage_h");
 			if (
 				response.data &&
 				response.data.chatMessages &&
@@ -40,7 +40,7 @@ function Hostel() {
 
 		try {
 			const response = await axios.post(
-				"http://localhost:3000/upload_h",
+				"http://localhost:6000/upload_h",
 				formdata,
 				{
 					params: { pname_h: pname, chat_h: chat_h, tf: Jaldi_batao },
