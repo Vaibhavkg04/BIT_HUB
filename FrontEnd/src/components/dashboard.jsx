@@ -40,7 +40,7 @@ function Dashboard() {
 	const pname = localStorage.getItem("Pname");
 	useEffect(() => {
 		axios
-			.get("https://bit-c-hub.onrender.com/getImage", {
+			.get("http://localhost:3000/getImage", {
 				params: { pname },
 			})
 			.then((res) => setImage_dash(res.data.image))
@@ -134,7 +134,7 @@ function Dashboard() {
 						<div className="picture">
 							<img
 								className="ml-8 mt-2 h-24 w-28"
-								src={"https://bit-c-hub.onrender.com/images/" + img_dash}
+								src={"http://localhost:3000/images/" + img_dash}
 								alt=""
 							/>
 							<br />

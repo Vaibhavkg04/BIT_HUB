@@ -22,7 +22,7 @@ function K20() {
 	}
 	const getData = async () => {
 		try {
-			const response = await axios.get("https://bit-c-hub.onrender.com/alK20");
+			const response = await axios.get("http://localhost:3000/alK20");
 			const combinedData = response.data.chatMessages.map(
 				(chatMessage, index) => ({
 					chatMessage,
@@ -47,7 +47,7 @@ function K20() {
 
 			return;
 		}
-		const url = "https://bit-c-hub.onrender.com/seniorK20";
+		const url = "http://localhost:3000/seniorK20";
 		const data = { Chat, MainUser, id1 };
 		axios
 			.post(url, data)
