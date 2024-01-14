@@ -12,7 +12,7 @@ function Login() {
 	const [password, setPass] = useState("");
 
 	const handleLogin = () => {
-		const url = "http://localhost:6000/login";
+		const url = "http://localhost:3000/login";
 		const data = { username, password };
 
 		localStorage.setItem("Pname", username);

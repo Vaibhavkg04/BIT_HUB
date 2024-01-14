@@ -22,7 +22,7 @@ function Alumini() {
 	}
 	const getData = async () => {
 		try {
-			const response = await axios.get("http://localhost:6000/al");
+			const response = await axios.get("http://localhost:3000/al");
 			const combinedData = response.data.chatMessages.map(
 				(chatMessage, index) => ({
 					chatMessage,
@@ -46,7 +46,7 @@ function Alumini() {
 
 			return;
 		}
-		const url = "http://localhost:6000/senior";
+		const url = "http://localhost:3000/senior";
 		const data = { Chat, MainUser, id1 };
 		axios
 			.post(url, data)
